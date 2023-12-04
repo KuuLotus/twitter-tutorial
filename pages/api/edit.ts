@@ -12,7 +12,7 @@ export default async function handler(
   }
 
   try {
-    const { currentUser } = await serverAuth(req);
+    const { currentUser } = await serverAuth(req, res);
 
     const { name, username, bio, profileImage, coverImage } = req.body;
 
@@ -32,6 +32,8 @@ export default async function handler(
         coverImage,
       },
     });
+
+    return res.status(200).json(updatedUser);
   } catch (err) {
     console.log(err);
     return res.status(400).end();
