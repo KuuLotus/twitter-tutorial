@@ -8,10 +8,6 @@ import { resolve } from "node:path/win32";
 const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getServerSession(req, res, authOptions);
 
-  console.log("==========================================-");
-  console.log(session);
-  console.log("==========================================-");
-
   if (!session?.user?.email) {
     throw new Error("Not signed in");
   }
