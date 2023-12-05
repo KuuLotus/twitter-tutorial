@@ -1,6 +1,5 @@
 import serverAuth from "@/libs/serverAuth";
 import { NextApiRequest, NextApiResponse } from "next";
-import { resolve } from "path/win32";
 
 export default async function handler(
   req: NextApiRequest,
