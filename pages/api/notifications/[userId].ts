@@ -34,6 +34,8 @@ export default async function handler(
         hasNotification: false,
       },
     });
+
+    return res.status(200).json(notifications);
   } catch (err) {
     console.log(err);
     return res.status(400).end();
